@@ -29,21 +29,21 @@ class CashOutUseCase {
         const creditedAccountId = creditedUser.account_id
 
         if(!creditedUser) {
-            throw new Error("The user you want to pay does not exists!")
+            throw new Error("The user you want to pay does not exists!").message
         }
 
         if(debitedAccountId === creditedAccountId){
-            throw new Error("Unable to send money to yourself")
+            throw new Error("Unable to send money to yourself").message
         }
 
         if(debitedUser.account.balance < value) {
-            throw new Error("insufficient funds!")
+            throw new Error("insufficient funds!").message
         }
 
         const transactionCreated = await this.transactionRep.cashOut({debitedAccountId, creditedAccountId, value})
 
         if(!transactionCreated) {
-            throw new Error("Transaction Failed!")
+            throw new Error("Transaction Failed!").message
         }
 
         const newDebtUserBalance = Number(debitedUser.account.balance) - value;
