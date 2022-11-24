@@ -15,12 +15,13 @@ class User {
     @Column()
     password: string;
 
-    @Column()
-    account_id: string;
-
     @OneToOne(() => Account)
     @JoinColumn({name: "account_id"})
     account: Account
+
+
+    @Column()
+    account_id: string;
 
     constructor() {
         if(!this.id) {

@@ -16,7 +16,7 @@ class UserRepository implements IUserRepository {
             username,
             password,
             account_id
-        })
+        });
 
         await this.respository.save(user)
 
@@ -24,11 +24,11 @@ class UserRepository implements IUserRepository {
     };
 
     async findByUserName(username: string): Promise<User> {
-        return await this.respository.findOne({username})
+        return await this.respository.findOne({username}, {relations: ["account"]})
     }
 
     async findById(id: string): Promise<User> {
-        return await this.respository.findOne({id})
+        return await this.respository.findOne({id}, {relations: ["account"]})
     }
 
 }

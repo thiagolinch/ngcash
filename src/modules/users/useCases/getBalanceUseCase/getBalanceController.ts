@@ -10,8 +10,9 @@ class GetBalanceController {
         const {id} = request.user;
         const getBalanceUseCase = container.resolve(GetBalanceUseCase)
 
-        const balance = await getBalanceUseCase.execute({user_id: id})
-        return response.status(200).json(balance)
+        const account = await getBalanceUseCase.execute({user_id: id})
+        const balance = account.account.balance
+        return response.status(200).json(balance);
     }
 }
 

@@ -1,9 +1,11 @@
 import { inject, injectable } from "tsyringe";
+import { Account } from "../../../accounts/entities/Account";
 import { IAccountRepository } from "../../../accounts/Repository/IAccountRepository";
+import { User } from "../../entities/User";
 import { IUserRepository } from "../../repository/IUserRepository";
 
 interface IResponse {
-    balance: string;
+    balance: number;
 }
 
 interface IRequest {
@@ -20,10 +22,15 @@ class GetBalanceUseCase {
         private userRepository: IUserRepository
     ) {}
 
-    async execute({user_id}: IRequest): Promise<void> {
+    async execute({user_id}: IRequest): Promise<User> {
         // verificar a propriedade da conta usando o id logado
         const user = await this.userRepository.findById(user_id)
         console.log(user)
+
+        // puxar o balance baseado no account_id do user
+        const account = await this.accountRepository.findById(user.account_id)
+
+        return user
     }
 }
 

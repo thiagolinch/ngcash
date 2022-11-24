@@ -19,6 +19,10 @@ class AccountRepository implements IAccountRepository {
         return account;
     }
 
+    async findById(id: string): Promise<Account> {
+        return await this.repository.findOne({id})
+    }
+
 }
 
 export { AccountRepository }
