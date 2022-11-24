@@ -49,7 +49,7 @@ class CashOutUseCase {
         const newDebtUserBalance = Number(debitedUser.account.balance) - value;
         await this.accountRep.updateBalance(debitedAccountId, newDebtUserBalance);
 
-        const newCredtUserBalance = value += Number(creditedUser.account.balance)
+        const newCredtUserBalance = value += Number(creditedUser.account.balance);
         await this.accountRep.updateBalance(creditedAccountId, newCredtUserBalance);
 
     }
