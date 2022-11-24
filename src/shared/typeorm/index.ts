@@ -1,5 +1,6 @@
 import { createConnection, getConnectionOptions } from 'typeorm';
 import { Account } from '../../modules/accounts/entities/Account';
+import { Transaction } from '../../modules/transactions/entities/transaction';
 import { User } from '../../modules/users/entities/User';
 import { UserTokens } from '../../modules/users/entities/UserToken';
 
@@ -15,7 +16,8 @@ getConnectionOptions().then(options => {
 		entities: [
 			Account,
       User,
-      UserTokens
+      UserTokens,
+      Transaction
 		]
   });
 });

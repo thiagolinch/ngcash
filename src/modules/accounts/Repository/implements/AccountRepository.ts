@@ -23,6 +23,16 @@ class AccountRepository implements IAccountRepository {
         return await this.repository.findOne({id})
     }
 
+    async updateBalance(id: string, balance: number): Promise<void> {
+        await this.repository
+        .createQueryBuilder()
+        .update()
+        .set({balance})
+        .where("id = :id")
+        .setParameters({id})
+        .execute();
+    }
+
 }
 
 export { AccountRepository }

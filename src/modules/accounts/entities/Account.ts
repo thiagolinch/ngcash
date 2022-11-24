@@ -15,7 +15,7 @@ class Account {
     constructor() {
         if(!this.id){
             this.id = uuidV4(),
-            this.balance = 100.00
+            this.balance = 100
         }
     }
 }
