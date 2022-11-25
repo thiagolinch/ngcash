@@ -9,6 +9,7 @@ interface ITransactionDTO {
 interface ITransactionRepository {
 
     cashOut({debitedAccountId, creditedAccountId, value}: ITransactionDTO): Promise<Transaction>;
+    getStatement(id:string): Promise<Transaction[]>
 }
 
 export { ITransactionRepository, ITransactionDTO }

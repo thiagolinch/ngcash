@@ -23,6 +23,12 @@ class TransactionRepository implements ITransactionRepository {
         return transaction
     }
 
+    async getStatement(id: string): Promise<Transaction[]> {
+        return await this.repository.createQueryBuilder("transactions").
+        where("transactions.debitedAccountId = :id", {id}).
+        orWhere("transactions.creditedAccountId = :id", {id}).getMany()
+    }
+
 }
 
 export { TransactionRepository }
