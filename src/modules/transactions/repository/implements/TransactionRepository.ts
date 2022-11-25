@@ -29,6 +29,27 @@ class TransactionRepository implements ITransactionRepository {
         orWhere("transactions.creditedAccountId = :id", {id}).getMany()
     }
 
+    async getStatementByDate(userAccountId: string, period: Date): Promise<Transaction[]> {
+        return await this.repository.query(
+            `SELECT * FROM transactions WHERE ("createdAt")='${period}' AND 
+            (("debitedAccountId")='${userAccountId}' OR ("creditedAccountId")='${userAccountId}')`
+        )
+    }
+
+    async getStatementByDateAndOut(userAccountId: string, period: Date): Promise<Transaction[]> {
+        return await this.repository.createQueryBuilder("t").
+        where("t.createdAt = :createdAt", {createdAt: period}).
+        andWhere("t.debitedAccountId = :debitedAccountId", {debitedAccountId: userAccountId}).
+        getMany();
+    }
+
+    async getStatementByDateAndIn(userAccountId: string, period: Date): Promise<Transaction[]> {
+        return await this.repository.createQueryBuilder("t").
+        where("t.createdAt = :createdAt", {createdAt: period}).
+        andWhere("t.creditedAccountId = :creditedAccountId", {creditedAccountId: userAccountId}).
+        getMany();
+    }
+
 }
 
 export { TransactionRepository }
