@@ -60,10 +60,10 @@ NÃO TEM ROTA DE CRIAÇÃO POR FORA POIS APENAS DEVE SER POSSÍVEL TER UMA CONTA
 
 ### Transaction
 
-* CASHOUT - localhost:3333//transactions
+* CASHOUT - localhost:3333/transactions
     * Parametros: username de quem vai receber, o valor a ser enviado e o token
 
-* STATEMENT - localhost:3333//transactions/statement
+* STATEMENT - localhost:3333/transactions/statement
     * Parametros: Apenas o token do user
 
 * FILTER BY DATE (com ou sem tipificação de transação) localhost:3333//transactions/statement-date
