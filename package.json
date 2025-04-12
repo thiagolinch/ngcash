@@ -10,7 +10,6 @@
       "clean": "rm -rf dist",
       "build": "tsup",
       "start": "node dist/shared/http/server.js"
-
    },
    "dependencies": {
       "@types/bcryptjs": "^2.4.2",
@@ -22,7 +21,7 @@
       "reflect-metadata": "^0.1.13",
       "swagger-jsdoc": "^6.2.8",
       "swagger-ui-express": "^5.0.1",
-      "tsup": "^6.7.0",
+      "tsup": "^8.4.0",
       "tsx": "^3.12.6",
       "tsyringe": "^4.7.0",
       "typeorm": "0.2.41",
