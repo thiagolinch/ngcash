@@ -11,14 +11,22 @@ interface IOptions {
 
 getConnectionOptions().then(options => {
   const newOptions = options as IOptions;
-  newOptions.host = 'projetos-tl.c7i88oiykryo.us-east-2.rds.amazonaws.com'; //Essa opção deverá ser EXATAMENTE o nome dado ao service do banco de dados
+  newOptions.host = 'projetos-tl.c7i88oiykryo.us-east-2.rds.amazonaws.com';
+
   createConnection({
     ...options,
-		entities: [
-			Account,
+    entities: [
+      Account,
       User,
       UserTokens,
-      Transaction
-		]
+      Transaction,
+    ],
+    migrations: [
+      // esse caminho é relativo a partir do build, ou seja, dist/
+      './typeorm/migrations/*.js'
+    ],
+    cli: {
+      migrationsDir: 'src/shared/typeorm/migrations',
+    }
   });
 });
