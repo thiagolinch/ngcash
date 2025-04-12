@@ -1,13 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "emitDecoratorMetadata": true,   // Adicione esta linha
-    "experimentalDecorators": true,  // E também esta linha
-    "resolveJsonModule": true
-  }
+    "target": "ES2020",          // Usar ES2020 ou superior
+    "module": "ESNext",          // Garantir que o TypeScript compile para módulos ES
+    "moduleResolution": "node",  // Resolução de módulos para Node.js
+    "esModuleInterop": true,     // Garantir compatibilidade com imports
+    "outDir": "dist",            // Diretório de saída
+    "rootDir": "src",            // Diretório raiz para os arquivos fontes
+    "strict": true,              // Ativar checagem rigorosa
+    "skipLibCheck": true,        // Ignorar checagem de tipos de bibliotecas
+    "forceConsistentCasingInFileNames": true,  // Garantir consistência no nome dos arquivos
+    "moduleResolution": "node",  // Resolução de módulos para o Node
+    "resolveJsonModule": true,   // Permitir importar arquivos JSON
+    "baseUrl": ".",              // Base para resolução de caminhos relativos
+    "paths": {
+      "*": ["node_modules/*"]    // Caminhos para os módulos
+    }
+  },
+  "include": ["src/**/*.ts"],    // Incluir todos os arquivos TypeScript na pasta src
+  "exclude": ["node_modules"]    // Excluir node_modules
 }

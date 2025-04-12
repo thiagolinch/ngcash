@@ -3,9 +3,10 @@
    "version": "1.0.0",
    "main": "index.js",
    "license": "MIT",
+   "type": "module",
    "scripts": {
       "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/shared/http/server.ts",
-      "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
+      "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli",
       "seed:users": "ts-node-dev src/shared/seed/users.ts",
       "clean": "rm -rf dist",
       "build": "tsup",
