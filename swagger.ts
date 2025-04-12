@@ -12,7 +12,7 @@ const options: swaggerJSDoc.Options = {
     },
     servers: [
       {
-        url: 'http://localhost:3333',
+        url: 'https://ngcash.onrender.com',
       },
     ],
     components: {
