@@ -70,7 +70,7 @@
  *               - creditedUserName
  *               - value
  *             properties:
- *               username:
+ *               creditedUserName:
  *                 type: string
  *               value:
  *                 type: number
