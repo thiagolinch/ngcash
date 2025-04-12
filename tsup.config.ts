@@ -1,13 +1,12 @@
-import { defineConfig } from 'tsup'
+import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ['src/**/*.ts'], // compila todos os arquivos .ts da pasta src
-  outDir: 'dist',
-  format: ['cjs'],
+  entry: ["src/shared/http/server.ts", "src/shared/typeorm/migrations/**/*.ts"],
+  outDir: "dist",
   splitting: false,
   sourcemap: true,
   clean: true,
-  dts: false, // pode deixar false se não precisa dos arquivos de tipo
-  preserveModules: true, // preserva estrutura de arquivos
-  preserveModulesRoot: 'src' // garante que a pasta 'src' vire a raiz do dist
-})
+  format: ["cjs"],
+  target: "node16",
+  shims: false,
+});
