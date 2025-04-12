@@ -7,13 +7,13 @@ import { User } from "./User";
 @Entity("users_tokens")
 class UserTokens {
 
-    @PrimaryColumn()
+    @PrimaryColumn("uuid")
     id: string;
 
-    @Column()
+    @Column("uuid")
     refresh_token: string;
 
-    @Column()
+    @Column("uuid")
     user_id: string;
 
     @ManyToOne(() => User)

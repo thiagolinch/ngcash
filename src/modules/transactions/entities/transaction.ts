@@ -1,31 +1,27 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
-import { v4 as uuidV4 } from "uuid"
+import { v4 as uuidV4 } from "uuid";
 
-
-@Entity("transactions") //transactions
+@Entity("transactions")
 class Transaction {
 
-    @PrimaryColumn()
-    id?: string;
+    @PrimaryColumn("uuid")
+    id: string;
 
-    @Column()
-    debitedAccountId: string;
+    @Column("uuid")
+    debitedAccountId!: string;
 
-    @Column()
-    creditedAccountId: string;
+    @Column("uuid")
+    creditedAccountId!: string;
 
-    @Column()
-    value: number;
+    @Column("decimal")
+    value!: number;
 
-    @CreateDateColumn()
-    createdAt: Date;
+    @CreateDateColumn({ type: "timestamp" })
+    createdAt!: Date;
 
     constructor() {
-        if(!this.id) {
-            this.id = uuidV4();
-        }
+        this.id = this.id ?? uuidV4();
     }
-    
 }
 
-export { Transaction }
+export { Transaction };

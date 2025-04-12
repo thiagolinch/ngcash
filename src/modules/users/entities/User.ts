@@ -6,13 +6,13 @@ import { Account } from "../../accounts/entities/Account";
 @Entity("users")//users
 class User {
 
-    @PrimaryColumn()
-    id?: string;
+    @PrimaryColumn("uuid")
+    id: string;
 
-    @Column()
+    @Column("varchar")
     username: string;
 
-    @Column()
+    @Column("varchar")
     password: string;
 
     @OneToOne(() => Account)
@@ -20,7 +20,7 @@ class User {
     account: Account
 
 
-    @Column()
+    @Column("uuid")
     account_id: string;
 
     constructor() {
