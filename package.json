@@ -9,7 +9,7 @@
       "seed:users": "ts-node-dev src/shared/seed/users.ts",
       "clean": "rm -rf dist",
       "build": "tsup",
-      "start": "node dist/shared/http/server.js"
+      "start": "node dist/http/server.js"
    },
    "dependencies": {
       "@types/bcryptjs": "^2.4.2",

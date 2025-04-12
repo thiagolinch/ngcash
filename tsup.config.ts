@@ -7,6 +7,6 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   format: ["cjs"],
-  target: "node16",
+  target: "node18",
   shims: false,
 });
