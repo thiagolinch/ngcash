@@ -1,12 +1,15 @@
 {
     "type": "postgres",
     "port": 5432,
-    "host": "localhost",
-    "username": "ngcash_root",
-    "password": "ngcash",
-    "database": "ngcash",
+    "host": "projetos-tl.c7i88oiykryo.us-east-2.rds.amazonaws.com",
+    "username": "thiago",
+    "password": "Scarif2024$",
+    "database": "projetos-tl",
     "migrations": ["./src/shared/typeorm/migrations/*.ts"],
     "cli": {
         "migrationsDir": "./src/shared/typeorm/migrations"
+    },
+    "ssl": {
+        "rejectUnauthorized": false
     }
 }
