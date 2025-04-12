@@ -67,7 +67,7 @@
  *           schema:
  *             type: object
  *             required:
- *               - username
+ *               - creditedUserName
  *               - value
  *             properties:
  *               username:

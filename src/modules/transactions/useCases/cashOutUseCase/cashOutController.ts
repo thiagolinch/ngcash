@@ -9,6 +9,7 @@ class CashOutController {
     async handle(request: Request, response: Response): Promise<Response> {
         const {id} = request.user;
         const {creditedUserName, value} = request.body;
+        console.log(creditedUserName, value)
         const cashOutUseCase = container.resolve(CashOutUseCase);
 
         try {
