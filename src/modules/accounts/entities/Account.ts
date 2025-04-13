@@ -8,11 +8,12 @@ class Account {
   id?: string;
 
   @Column("decimal", { precision: 10, scale: 2, default: 100 })
-  balance!: number;
+  balance?: number;
 
   constructor() {
     if (!this.id) {
       this.id = uuidV4();
+      this.balance = 100
     }
   }
 }
