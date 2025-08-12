@@ -1,15 +1,12 @@
 {
     "type": "postgres",
     "port": 5432,
-    "host": "projetos-tl.c7i88oiykryo.us-east-2.rds.amazonaws.com",
-    "username": "thiago",
-    "password": "Scarif2024$",
-    "database": "projetos-tl",
+    "host": "db.dlfibacmlqphqkajpscz.supabase.co",
+    "username": "postgres",
+    "password": "ngcashapi152532",
+    "database": "postgres",
     "migrations": ["./src/shared/typeorm/migrations/*.ts"],
     "cli": {
         "migrationsDir": "./src/shared/typeorm/migrations"
-    },
-    "ssl": {
-        "rejectUnauthorized": false
     }
 }
