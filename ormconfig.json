@@ -1,8 +1,8 @@
 {
     "type": "postgres",
-    "port": 5432,
-    "host": "db.ofquxucuvinakriqhuzg.supabase.co",
-    "username": "postgres",
+    "port": 6543,
+    "host": "aws-1-us-west-2.pooler.supabase.com",
+    "username": "postgres.ofquxucuvinakriqhuzg",
     "password": "Scarif2024$",
     "database": "postgres",
     "migrations": ["./src/shared/typeorm/migrations/*.ts"],

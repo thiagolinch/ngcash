@@ -11,7 +11,7 @@ interface IOptions {
 
 getConnectionOptions().then(options => {
   const newOptions = options as IOptions;
-  newOptions.host = 'db.ofquxucuvinakriqhuzg.supabase.co';
+  newOptions.host = 'aws-1-us-west-2.pooler.supabase.com';
 
   createConnection({
     ...options,

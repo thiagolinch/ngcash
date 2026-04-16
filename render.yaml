@@ -6,7 +6,7 @@ services:
     startCommand: node dist/shared/http/server.js
     envVars:
       - key: DATABASE_URL
-        value: postgresql://postgres:Scarif2024$@db.ofquxucuvinakriqhuzg.supabase.co:5432/postgres
+        value: postgresql://postgres.ofquxucuvinakriqhuzg:Scarif2024$@aws-1-us-west-2.pooler.supabase.com:6543/postgres
       - key: NODE_ENV
         value: development
 
