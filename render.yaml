@@ -6,7 +6,7 @@ services:
     startCommand: node dist/shared/http/server.js
     envVars:
       - key: DATABASE_URL
-        value: postgresql://thiago:Scarif2024$@projetos-tl.c7i88oiykryo.us-east-2.rds.amazonaws.com:5432/projetos-tl?schema=public
+        value: postgresql://postgres:Scarif2024$@db.ofquxucuvinakriqhuzg.supabase.co:5432/postgres
       - key: NODE_ENV
         value: development
 

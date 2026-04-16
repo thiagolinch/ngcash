@@ -1,9 +1,9 @@
 {
     "type": "postgres",
     "port": 5432,
-    "host": "db.dlfibacmlqphqkajpscz.supabase.co",
+    "host": "db.ofquxucuvinakriqhuzg.supabase.co",
     "username": "postgres",
-    "password": "ngcashapi152532",
+    "password": "Scarif2024$",
     "database": "postgres",
     "migrations": ["./src/shared/typeorm/migrations/*.ts"],
     "cli": {
